@@ -233,6 +233,81 @@
   .cert h4{margin-top:8px; font-size:17px; font-weight:600; font-family:'Space Grotesk',sans-serif;}
   @media (max-width:640px){.cert-list{grid-template-columns:1fr;}}
 
+  /* ===== Experience ===== */
+  .exp-card{
+    background:var(--card); border:1px solid var(--line-strong);
+  }
+  .exp-header{
+    display:grid; grid-template-columns: 70px 1fr auto; border-bottom:1px solid var(--line);
+    align-items:center;
+  }
+  .exp-num{
+    font-family:'JetBrains Mono',monospace; font-size:13px; color:var(--teal); padding:20px 14px;
+    border-right:1px solid var(--line); display:flex; align-items:flex-start; justify-content:center;
+  }
+  .exp-header-main{padding:20px 24px;}
+  .exp-header-main h3{font-size:21px; font-weight:600; margin-bottom:4px;}
+  .exp-meta{
+    font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--muted);
+    display:flex; gap:18px; margin-top:8px; flex-wrap:wrap;
+  }
+  .exp-meta span{display:flex; align-items:center; gap:5px;}
+  .exp-duration{
+    padding:20px 24px; text-align:right;
+    font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--teal);
+    border-left:1px solid var(--line);
+  }
+  .exp-body{padding:24px;}
+  .exp-pipeline{
+    display:flex; align-items:center; gap:0;
+    background:var(--paper-alt); border:1px solid var(--line); margin-bottom:24px;
+    overflow-x:auto;
+  }
+  .exp-pipeline-step{
+    font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase;
+    letter-spacing:0.05em; padding:12px 16px; color:var(--ink); white-space:nowrap;
+    border-right:1px solid var(--line); display:flex; align-items:center; gap:8px;
+  }
+  .exp-pipeline-step:last-child{border-right:none;}
+  .exp-pipeline-step .step-dot{
+    width:7px; height:7px; background:var(--teal); border-radius:50%; flex-shrink:0;
+  }
+  .exp-pipeline-arrow{
+    font-family:'JetBrains Mono',monospace; font-size:14px; color:var(--teal); padding:0 2px;
+  }
+  .exp-grid{display:grid; grid-template-columns:1.4fr 1fr; gap:28px;}
+  .exp-achievements{}
+  .exp-achievements ul{
+    list-style:none; margin:0; padding:0;
+  }
+  .exp-achievements li{
+    padding:9px 0; border-bottom:1px solid var(--line); font-size:15px;
+    display:flex; gap:10px; align-items:flex-start;
+    color:var(--ink);
+  }
+  .exp-achievements li:last-child{border-bottom:none;}
+  .exp-achievements li::before{
+    content:'→'; font-family:'JetBrains Mono',monospace; color:var(--teal);
+    font-size:12px; flex-shrink:0; margin-top:3px;
+  }
+  .exp-stack{border-left:1px solid var(--line); padding-left:24px;}
+  .exp-stack h4{
+    font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase;
+    letter-spacing:0.06em; color:var(--muted); margin:0 0 14px;
+  }
+  .exp-tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .exp-tag{
+    font-family:'JetBrains Mono',monospace; font-size:11px; text-transform:uppercase;
+    letter-spacing:0.04em; border:1px solid var(--line-strong); padding:4px 10px;
+    color:var(--teal-dark); background:var(--paper-alt);
+  }
+  @media(max-width:760px){
+    .exp-header{grid-template-columns:52px 1fr;}
+    .exp-duration{display:none;}
+    .exp-grid{grid-template-columns:1fr;}
+    .exp-stack{border-left:none; padding-left:0; border-top:1px solid var(--line); padding-top:16px;}
+  }
+
   /* ===== Contact / footer ===== */
   footer{padding:56px 0 60px;}
   .contact-grid{display:grid; grid-template-columns: 1.2fr 1fr; gap:40px; align-items:start;}
@@ -258,6 +333,7 @@
     <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navMenu">Menu</button>
     <ul id="navMenu">
       <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#certs">Certifications</a></li>
@@ -308,9 +384,85 @@
     </div>
   </section>
 
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head"><span class="section-num">02</span><h2 class="section-title">Experience</h2></div>
+
+      <div class="exp-card">
+        <div class="exp-header">
+          <div class="exp-num">01</div>
+          <div class="exp-header-main">
+            <h3>Data Analysis &amp; API Development Internship</h3>
+            <div class="exp-meta">
+              <span>📍 Chennai, Tamil Nadu</span>
+              <span>🗓 1 Month · 2025</span>
+              <span>🏷 Retail / Customer Sales Data</span>
+            </div>
+            <div class="project-tags" style="margin-top:10px;">
+              <span class="tag">Data Analysis</span>
+              <span class="tag">Data Processing</span>
+              <span class="tag">REST API</span>
+              <span class="tag">Database Management</span>
+            </div>
+          </div>
+          <div class="exp-duration">1 Month<br>Internship</div>
+        </div>
+        <div class="exp-body">
+          <!-- Workflow Pipeline -->
+          <div class="exp-pipeline">
+            <div class="exp-pipeline-step"><span class="step-dot"></span>Raw Data</div>
+            <div class="exp-pipeline-arrow">→</div>
+            <div class="exp-pipeline-step"><span class="step-dot"></span>Excel / Cleaning</div>
+            <div class="exp-pipeline-arrow">→</div>
+            <div class="exp-pipeline-step"><span class="step-dot"></span>MySQL Database</div>
+            <div class="exp-pipeline-arrow">→</div>
+            <div class="exp-pipeline-step"><span class="step-dot"></span>FastAPI</div>
+            <div class="exp-pipeline-arrow">→</div>
+            <div class="exp-pipeline-step"><span class="step-dot"></span>Python API Client</div>
+            <div class="exp-pipeline-arrow">→</div>
+            <div class="exp-pipeline-step"><span class="step-dot"></span>Pandas</div>
+            <div class="exp-pipeline-arrow">→</div>
+            <div class="exp-pipeline-step"><span class="step-dot"></span>Excel Export</div>
+          </div>
+
+          <div class="exp-grid">
+            <div class="exp-achievements">
+              <ul>
+                <li>Cleaned and preprocessed retail/customer sales dataset of ~80,000 records for database ingestion</li>
+                <li>Designed and managed a MySQL <em>Customers</em> table (invoice no., stock code, quantity, price, country, etc.) using DBeaver and MySQL tools</li>
+                <li>Built a FastAPI-based REST API with CRUD endpoints — GET by country, POST new records, PATCH updates, DELETE records</li>
+                <li>Added an Excel export endpoint that converts filtered API data into a downloadable spreadsheet</li>
+                <li>Validated all API endpoints via Swagger/OpenAPI; handled HTTP status codes 200, 201, 404, 422, and 500</li>
+                <li>Consumed FastAPI endpoints from a Python client using the <code>requests</code> library; converted JSON responses into Pandas DataFrames for downstream analysis</li>
+                <li>Debugged schema mismatches, data-type errors, SQL import issues, and API parameter errors across the full stack</li>
+              </ul>
+            </div>
+            <div class="exp-stack">
+              <h4>Technology Stack</h4>
+              <div class="exp-tags">
+                <span class="exp-tag">Python</span>
+                <span class="exp-tag">Pandas</span>
+                <span class="exp-tag">SQL</span>
+                <span class="exp-tag">MySQL</span>
+                <span class="exp-tag">DBeaver</span>
+                <span class="exp-tag">FastAPI</span>
+                <span class="exp-tag">REST API</span>
+                <span class="exp-tag">JSON</span>
+                <span class="exp-tag">Excel</span>
+                <span class="exp-tag">Swagger</span>
+                <span class="exp-tag">Requests</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <section id="projects">
     <div class="wrap">
-      <div class="section-head"><span class="section-num">02</span><h2 class="section-title">Projects</h2></div>
+      <div class="section-head"><span class="section-num">03</span><h2 class="section-title">Projects</h2></div>
 
       <div class="project">
         <div class="project-head">
@@ -418,7 +570,7 @@
 
   <section id="skills">
     <div class="wrap">
-      <div class="section-head"><span class="section-num">03</span><h2 class="section-title">Skills</h2></div>
+      <div class="section-head"><span class="section-num">04</span><h2 class="section-title">Skills</h2></div>
       <div class="skills-grid">
         <div class="skill-group">
           <h4>Languages &amp; Analysis</h4>
@@ -438,7 +590,7 @@
 
   <section id="certs">
     <div class="wrap">
-      <div class="section-head"><span class="section-num">04</span><h2 class="section-title">Certifications</h2></div>
+      <div class="section-head"><span class="section-num">05</span><h2 class="section-title">Certifications</h2></div>
       <div class="cert-list">
         <div class="cert">
           <div class="cap mono">2026</div>
